@@ -1,52 +1,36 @@
-#include <string>
 #include <iostream>
 using namespace std;
 
-class produk {
+class angka
+{
 private:
-    int id;
-    string nama;
+    int *arr;
+    int panjang;
 
 public:
-
-    void tampilkan() {
-        cout << "id: " << id << endl;
-        cout << "Nama: " << nama << endl;
-        cout << endl;
-    }
-
-    produk() {
-        id = 14;
-        nama = "tali";
-    }
-
-    produk (int pid){
-        id=pid;
-        nama="meja";
-    }
-
-    produk (string pnama){
-        id = 1;
-        nama=pnama;
-    }
-
-    produk (int pid, string pnama) {
-        id=pid;
-        nama=pnama;
-    }
+    angka(int);    // Constructor
+    ~angka();       // Destructor
+    void cetakData();
+    void isiData();
 };
 
-int main(){
-    cout << "--daftar inventaeis toko-- "<< endl;
-    produk produk1;
-    produk produk2 (3);
-    produk produk3 ("meja");
-    produk produk4 (4, "kursi");
+angka::angka(int i) { // Constructor
+    panjang = i;
+    arr = new int[i];
+    isiData();
+}
 
-    produk1.tampilkan();
-    produk2.tampilkan();
-    produk3.tampilkan();
-    produk4.tampilkan(); 
+angka::~angka() { // Destructor
+    cout << endl;
+    cetakData();
+    delete[] arr;
+    cout << "Alamat Array Sudah Dilepaskan" << endl;
+}
 
-    return 0;
+void angka::cetakData()
+{
+    for (int i = 1; i <= panjang; i++)
+    {
+        cout << i << " = " << arr[i] << endl;
+    }
 }
