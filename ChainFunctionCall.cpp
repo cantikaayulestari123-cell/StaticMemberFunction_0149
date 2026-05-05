@@ -16,7 +16,7 @@ class Buku {
 };
 
 int main() {
-    Buku b;
-    cout << b.setJudul("Matematika").getJudul() << endl; // chain function call
+    Buku bukunya;
+    cout << bukunya.setJudul("Matematika").getJudul() << endl; // chain function call
     return 0;
 }
