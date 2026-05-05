@@ -20,3 +20,11 @@ int mahasiswa::nim = 10;
 void mahasiswa::setID(){
     id = ++nim;
 };
+
+void mahasiswa::printAll(){
+
+    cout << " ID : " <<id << endl;
+    cout << "nama : " <<nama << endl;
+    cout << endl;
+};
+
